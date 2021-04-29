@@ -53,8 +53,8 @@ func main() {
 	client := s3.NewFromConfig(cfg)
 
 	input := &s3.CopyObjectInput{
-		Bucket:     aws.String(url.PathEscape(*sourceBucket)),
-		CopySource: destinationBucket,
+		CopySource: aws.String(url.PathEscape(*sourceBucket)),
+		Bucket:     destinationBucket,
 		Key:        objectName,
 	}
 
